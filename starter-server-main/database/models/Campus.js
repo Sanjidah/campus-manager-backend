@@ -5,11 +5,15 @@ const Campus = db.define("campus", {
 
   name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+        notEmpty: true,
+    },
   },
 
   description: {
-    type: Sequelize.STRING,
+    // type: Sequelize.STRING,
+    type: Sequelize.TEXT,
   },
 
   imageUrl: {
@@ -20,7 +24,10 @@ const Campus = db.define("campus", {
   address: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: "no address"
+    defaultValue: "no address",
+    validate: {
+      notEmpty: true,
+    },
   }
 
 });

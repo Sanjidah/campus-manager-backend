@@ -33,6 +33,13 @@ router.post('/', ash(async(req, res) => {
   res.status(200).json(newCampus);
 }));
 
+// router.post('/', function(req, res, next) {
+//   Campus.create(req.body)
+//     .then(createdCampus => res.status(200).json(createdCampus))
+//     .catch(err => next(err));
+// });
+
+
 // Edit Campus
 router.put('/:id', ash(async(req, res) => {
   await Campus.update(req.body, {
